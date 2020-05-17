@@ -1,3 +1,10 @@
+fruitnanny-api (20.05.3) buster; urgency=medium
+
+  * Make libexec/upgrade non-interactive
+  * Execute fruitnanny-upgrade.service without pkexec
+
+ -- Lucas Kahlert <lucas.kahlert@square-src.de>  Sun, 17 May 2020 16:35:28 +0200
+
 fruitnanny-api (20.05.2) buster; urgency=medium
 
   * Add missing /usr/libexec/fruitnanny/check-update script
