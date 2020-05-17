@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/libexec/fruitnanny/upgrade
+ExecStart=/bin/bash /usr/libexec/fruitnanny/upgrade
 
 [Install]
 WantedBy=multi-user.target
