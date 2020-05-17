@@ -1,3 +1,9 @@
+fruitnanny-api (20.05.2) buster; urgency=medium
+
+  * Add missing /usr/libexec/fruitnanny/check-update script
+
+ -- Lucas Kahlert <lucas.kahlert@square-src.de>  Sun, 17 May 2020 16:22:18 +0200
+
 fruitnanny-api (20.05.1) buster; urgency=medium
 
   * Initial release.

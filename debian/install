@@ -4,3 +4,4 @@ debian/localauthority/10-fruitnanny.pkla /var/lib/polkit-1/localauthority/10-ven
 debian/avahi/fruitnanny-http.service /etc/avahi/services
 debian/libexec/update /usr/libexec/fruitnanny
 debian/libexec/upgrade /usr/libexec/fruitnanny
+debian/libexec/check-update /usr/libexec/fruitnanny
