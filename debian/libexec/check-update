@@ -1,0 +1,44 @@
+#!/usr/bin/python3
+import json
+import re
+import sys
+from subprocess import run, PIPE
+
+
+PACKAGES = [
+    "fruitnanny-ui",
+    "fruitnanny-api",
+    "rws",
+]
+
+installed_re = re.compile(r"^  Installed: (?P<package>.+)$", re.MULTILINE)
+candidate_re = re.compile(r"^  Candidate: (?P<package>.+)$", re.MULTILINE)
+
+
+def check_updates(package):
+    proc = run(
+        ["apt-cache", "policy", package],
+        stdout=PIPE,
+        check=True,
+        universal_newlines=True,
+    )
+
+    match = installed_re.search(proc.stdout)
+    if not match:
+        raise SystemExit(f"Error: package {package!r} not found")
+    installed = match.group("package")
+
+    match = candidate_re.search(proc.stdout)
+    if not match:
+        raise SystemExit(f"Error: no candidate for {package!r} found")
+    candidate = match.group("package")
+
+    if candidate != installed:
+        return "available"
+    else:
+        return "recent"
+
+
+updates = {package: check_updates(package) for package in PACKAGES}
+
+json.dump(updates, sys.stdout)

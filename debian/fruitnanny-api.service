@@ -1,0 +1,15 @@
+[Unit]
+Description=FruitNanny API
+Documentation=man:fruitnanny-api(8)
+Wants=NetworkManager.service wpa_supplicant.service
+After=NetworkManager.service wpa_supplicant.service dbus.service
+
+[Service]
+User=fruitnanny
+Type=simple
+ExecStart=/usr/bin/fruitnanny serve --addr systemd
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+
+HOME="$(getent passwd fruitnanny | cut -d : -f 6)"
+
+#DEBHELPER#
+
+# Add user "fruitnanny" to group "netdev" to gave access to DBus
+# "fi.w1.wpa_supplicant1" service.
+adduser fruitnanny netdev
+
+# Add user "fruitnanny" to group "gpio" to gave access to /dev/gpio* devices.
+adduser fruitnanny gpio
+
+# Copy default settings if not already existing
+if [ ! -f $HOME/settings.json ]; then
+    # Ensure home directory exists
+    mkdir -p /var/lib/fruitnanny
+
+    cp /usr/share/fruitnanny-api/settings.json $HOME/settings.json
+fi
+
+# Make user "fruitnanny" owner of its home directory
+chown -R fruitnanny:fruitnanny $HOME

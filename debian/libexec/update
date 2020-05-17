@@ -1,0 +1,13 @@
+#!/usr/bin/pkexec /bin/bash
+set -euo pipefail
+
+if [ ! -f "/etc/apt/sources.list.d/fruitnanny.list" ]; then
+    echo "Error: /etc/apt/sources.list.d/fruitnanny.list not found" > /dev/stderr
+    exit 1
+fi
+
+/usr/bin/apt update -q \
+    --no-list-cleanup \
+    -o Dir::Etc::sourcelist="sources.list.d/fruitnanny.list" \
+    -o Dir::Etc::sourceparts="-"
+

@@ -1,0 +1,4 @@
+#!/usr/bin/pkexec /bin/bash
+set -euo pipefail
+
+/usr/bin/apt install --only-upgrade fruitnanny-ui fruitnanny-api rws

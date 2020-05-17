@@ -1,0 +1,6 @@
+fruitnanny /usr/bin
+debian/settings.json /usr/share/fruitnanny-api
+debian/localauthority/10-fruitnanny.pkla /var/lib/polkit-1/localauthority/10-vendor.d
+debian/avahi/fruitnanny-http.service /etc/avahi/services
+debian/libexec/update /usr/libexec/fruitnanny
+debian/libexec/upgrade /usr/libexec/fruitnanny

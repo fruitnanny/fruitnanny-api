@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: fruitnanny-api
+Upstream-Contact: Lucas Kahlert <lucas.kahlert@square-src.de>
+Source: https://github.com/f3anaro/fruitnanny-api
+
+Files: *
+Copyright: 2020 Lucas Kahlert <lucas.kahlert@square-src.de>
+License: GPL-3+

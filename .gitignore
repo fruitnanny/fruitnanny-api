@@ -1,0 +1,5 @@
+fruitnanny
+debian/*debhelper*
+debian/*.substvars
+debian/fruitnanny-api/
+debian/files

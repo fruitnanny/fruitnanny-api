@@ -1,0 +1,12 @@
+Source: fruitnanny-api
+Section: web
+Priority: optional
+Maintainer: Lucas Kahlert <lucas.kahlert@square-src.de>
+Build-Depends: debhelper (>=11), dh-sysuser
+Standards-Version: 4.0.0
+Homepage: https://github.com/f3anaro/fruitnanny-api
+
+Package: fruitnanny-api
+Architecture: armhf
+Depends: ${misc:Depends}, avahi-daemon, fruitnanny-ui, python3
+Description: FruitNanny API

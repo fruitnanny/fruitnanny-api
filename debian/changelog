@@ -1,0 +1,5 @@
+fruitnanny-api (20.05.1) buster; urgency=medium
+
+  * Initial release.
+
+ -- Lucas Kahlert <lucas.kahlert@square-src.de>  Thu, 14 May 2020 22:22:25 +0200

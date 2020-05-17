@@ -1,0 +1,14 @@
+[Allow fruitnanny to manage NetworkManager]
+Identity=unix-user:fruitnanny
+Action=org.freedesktop.NetworkManager.*
+ResultAny=yes
+
+[Allow fruitnanny to power-off and reboot system]
+Identity=unix-user:fruitnanny
+Action=org.freedesktop.login1.reboot;org.freedesktop.login1.power-off
+ResultAny=yes
+
+[Allow allow all fruitnanny actions]
+Identity=unix-user:fruitnanny
+Action=org.fruitnanny.*
+ResultAny=yes
