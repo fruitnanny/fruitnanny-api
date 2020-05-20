@@ -16,9 +16,6 @@
     </defaults>
     <annotate key="org.freedesktop.policykit.exec.path">/bin/bash</annotate>
     <annotate key="org.freedesktop.policykit.exec.argv1">/usr/libexec/fruitnanny/update</annotate>
-    <!-- <annotate key="org.freedesktop.policykit.exec.path">/usr/libexec/fruitnanny/update</annotate> -->
-    <!-- <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/fruitnanny</annotate>
-    <annotate key="org.freedesktop.policykit.exec.argv1">update</annotate> -->
   </action>
 
   <action id="org.fruitnanny.api.upgrade">
@@ -30,9 +27,6 @@
     </defaults>
     <annotate key="org.freedesktop.policykit.exec.path">/bin/bash</annotate>
     <annotate key="org.freedesktop.policykit.exec.argv1">/usr/libexec/fruitnanny/update</annotate>
-    <!-- <annotate key="org.freedesktop.policykit.exec.path">/usr/libexec/fruitnanny/upgrade</annotate> -->
-    <!-- <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/fruitnanny</annotate>
-    <annotate key="org.freedesktop.policykit.exec.argv1">upgrade</annotate> -->
   </action>
 
 </policyconfig>
