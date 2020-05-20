@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-HOME="$(getent passwd fruitnanny | cut -d : -f 6)"
-
 #DEBHELPER#
+
+HOME="$(getent passwd fruitnanny | cut -d : -f 6)"
 
 # Add user "fruitnanny" to group "netdev" to gave access to DBus
 # "fi.w1.wpa_supplicant1" service.
