@@ -5,6 +5,3 @@ After=network.target
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/apt install -y --only-upgrade fruitnanny-ui fruitnanny-api rws
-
-[Install]
-WantedBy=multi-user.target
