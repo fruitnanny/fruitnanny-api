@@ -2,7 +2,8 @@
 Description=FruitNanny API
 Documentation=man:fruitnanny-api(8)
 Wants=NetworkManager.service wpa_supplicant.service
-After=NetworkManager.service wpa_supplicant.service dbus.service
+After=NetworkManager.service wpa_supplicant.service dbus.service fruitnanny-api.socket
+Requires=fruitnanny-api.socket
 
 [Service]
 User=fruitnanny
