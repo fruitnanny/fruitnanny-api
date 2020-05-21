@@ -2,7 +2,7 @@
 set -euo pipefail
 
 if [ ! -f "/etc/apt/sources.list.d/fruitnanny.list" ]; then
-    echo "Error: /etc/apt/sources.list.d/fruitnanny.list not found" > /dev/stderr
+    >&2 echo "Error: /etc/apt/sources.list.d/fruitnanny.list not found"
     exit 1
 fi
 
