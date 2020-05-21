@@ -1,4 +1,9 @@
 #!/usr/bin/pkexec /bin/bash
 set -euo pipefail
 
-exec /usr/bin/apt install -y --only-upgrade fruitnanny-ui fruitnanny-api rws
+if ! systemctl --all --type service | grep -q "nginx.service"; then
+    echo "Error: service fruitnanny-upgrade.service not found" > /dev/stderr
+    exit 1
+fi
+
+exec systemctl start --wait fruitnanny-upgrade.service

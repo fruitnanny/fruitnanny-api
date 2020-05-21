@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash /usr/libexec/fruitnanny/upgrade
+ExecStart=/usr/bin/apt install -y --only-upgrade fruitnanny-ui fruitnanny-api rws
 
 [Install]
 WantedBy=multi-user.target

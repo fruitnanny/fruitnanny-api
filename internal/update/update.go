@@ -44,6 +44,7 @@ func (u *Updater) Check() (updates map[string]string, err error) {
 
 func (u *Updater) Update() error {
 	cmd := exec.Command(path.Join(u.libexecDir, "update"))
+	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	err := cmd.Run()
 	if err != nil {
@@ -54,6 +55,7 @@ func (u *Updater) Update() error {
 
 func (u *Updater) Upgrade() error {
 	cmd := exec.Command(path.Join(u.libexecDir, "upgrade"))
+	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	err := cmd.Run()
 	if err != nil {
@@ -63,7 +65,9 @@ func (u *Updater) Upgrade() error {
 }
 
 func (u *Updater) UpgradeInBackground() error {
-	cmd := exec.Command("systemctl", "start", "--wait", "fruitnanny-upgrade.service")
+	cmd := exec.Command(path.Join(u.libexecDir, "upgrade"))
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
 	if err := cmd.Run(); err != nil {
 		return errors.Wrap(err, "Failed to upgrade")
 	}

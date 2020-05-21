@@ -10,4 +10,3 @@ exec /usr/bin/apt update -q \
     --no-list-cleanup \
     -o Dir::Etc::sourcelist="sources.list.d/fruitnanny.list" \
     -o Dir::Etc::sourceparts="-"
-
