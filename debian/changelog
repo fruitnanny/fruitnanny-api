@@ -1,3 +1,10 @@
+fruitnanny-api (20.05.5) buster; urgency=medium
+
+  * Make systemd service unit require socket
+  * Do not enable or start upgrade service
+
+ -- Lucas Kahlert <lucas.kahlert@square-src.de>  Thu, 21 May 2020 18:50:59 +0200
+
 fruitnanny-api (20.05.4) buster; urgency=medium
 
   * Add missing PolicyKit action definition
