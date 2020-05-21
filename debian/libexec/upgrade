@@ -1,8 +1,12 @@
 #!/usr/bin/pkexec /bin/bash
-set -euo pipefail
 
-if ! systemctl --all --type service | grep -q "nginx.service"; then
-    >&2 echo "Error: service fruitnanny-upgrade.service not found" > /dev/stderr
+# Verify if service exists. Otherwise, the "start --wait" call will block
+# indefinitely.
+systemctl status fruitnanny-upgrade.service > /dev/null
+rc=$?
+
+if [ $rc -eq 4 ]; then
+    >&2 echo "Error: service fruitnanny-upgrade.service not found"
     exit 1
 fi
 
