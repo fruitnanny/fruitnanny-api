@@ -1,3 +1,11 @@
+fruitnanny-api (20.05.7) buster; urgency=medium
+
+  * Do not stop fruitnanny-upgrade.service on restart
+  * Use systemd service to fetch updates
+  * Include wpasupplicant in FruitNanny upgrade service
+
+ -- Lucas Kahlert <lucas.kahlert@square-src.de>  Fri, 22 May 2020 03:53:07 +0200
+
 fruitnanny-api (20.05.6) buster; urgency=medium
 
   * Fix check for existence of systemd service
