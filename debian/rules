@@ -18,4 +18,4 @@
 override_dh_installsystemd:
 	dh_installsystemd --name=fruitnanny-api
 	dh_installsystemd --name=fruitnanny-update --no-enable --no-start
-	dh_installsystemd --name=fruitnanny-upgrade --no-enable --no-start
+	dh_installsystemd --name=fruitnanny-upgrade --no-enable --no-start --no-stop-on-upgrade
