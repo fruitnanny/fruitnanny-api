@@ -1,5 +1,5 @@
 [Unit]
-Description=Update FruitNanny
+Description=Upgrade FruitNanny packages
 After=network.target
 
 [Service]

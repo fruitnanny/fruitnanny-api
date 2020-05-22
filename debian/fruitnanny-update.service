@@ -1,0 +1,11 @@
+[Unit]
+Description=Update FruitNanny repository
+After=network.target
+ConditionPathExists=/etc/apt/sources.list.d/fruitnanny.list
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/apt update -q \
+    --no-list-cleanup \
+    -o Dir::Etc::sourcelist="sources.list.d/fruitnanny.list" \
+    -o Dir::Etc::sourceparts="-"
