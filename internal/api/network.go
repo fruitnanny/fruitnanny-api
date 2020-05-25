@@ -108,9 +108,9 @@ const (
 )
 
 type Checkpoint struct {
-	Id              uint   `json:"id"`
-	Created         int64  `json:"created"`
-	RollbackTimeout uint32 `json:"rollbackTimeout"`
+	Id              uint      `json:"id"`
+	Created         time.Time `json:"created"`
+	RollbackTimeout uint32    `json:"rollbackTimeout"`
 }
 
 const (
@@ -1391,9 +1391,16 @@ func (nm *NetworkManager) readCheckpointByPath(path dbus.ObjectPath) (*Checkpoin
 		)
 	}
 
+	// timestamp (in CLOCK_BOOTTIME milliseconds) of checkpoint creation.
+	created := time.Duration(properties["Created"].Value().(int64)) * time.Millisecond
+	now := clock_boottime()
+
+	createdTime := time.Now()
+	createdTime.Add(created - now)
+
 	return &Checkpoint{
 		Id:              uint(id),
-		Created:         properties["Created"].Value().(int64),
+		Created:         createdTime,
 		RollbackTimeout: properties["RollbackTimeout"].Value().(uint32),
 	}, nil
 }
