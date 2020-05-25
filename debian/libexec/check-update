@@ -9,6 +9,7 @@ PACKAGES = [
     "fruitnanny-ui",
     "fruitnanny-api",
     "rws",
+    "wpasupplicant",
 ]
 
 installed_re = re.compile(r"^  Installed: (?P<package>.+)$", re.MULTILINE)
