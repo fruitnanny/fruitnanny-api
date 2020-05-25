@@ -15,5 +15,5 @@ func (v version) String() string {
 var Version = version{
 	year:  20,
 	month: 05,
-	patch: 7,
+	patch: 8,
 }
