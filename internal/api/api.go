@@ -448,6 +448,7 @@ func (s *server) readHotspot() http.HandlerFunc {
 }
 
 type hotspotUpdateOptions struct {
+	Type     string	 `json:"type"`
 	Password *string `json:"password"`
 	Ssid     string  `json:"ssid"`
 }
@@ -484,7 +485,7 @@ func (s *server) putHotspot() http.HandlerFunc {
 			return
 		}
 
-		err = s.nm.UpdateHotspot(hotspot, update.Ssid, update.Password)
+		err = s.nm.UpdateHotspot(hotspot, update.Ssid, update.Password, update.Type)
 		if err != nil {
 			log.Println("Failed to update hotspot:", err)
 			http.Error(w, err.Error(), http.StatusBadRequest)

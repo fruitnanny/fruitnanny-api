@@ -791,7 +791,7 @@ func (nm *NetworkManager) UpdateConnection(connection *Connection, name, ssid st
 	return nil
 }
 
-func (nm *NetworkManager) UpdateHotspot(hotspot *Hotspot, ssid string, password *string) error {
+func (nm *NetworkManager) UpdateHotspot(hotspot *Hotspot, ssid string, password *string, typeStr string) error {
 	settings := Settings{
 		"connection": hotspotDefaults["connection"],
 		"802-11-wireless": map[string]dbus.Variant{
@@ -828,6 +828,7 @@ func (nm *NetworkManager) UpdateHotspot(hotspot *Hotspot, ssid string, password 
 	// Populate hotspot
 	hotspot.Ssid = ssid
 	hotspot.Password = password
+	hotspot.Type = typeStr
 
 	return nil
 }
