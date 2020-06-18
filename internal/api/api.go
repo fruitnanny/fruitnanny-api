@@ -448,6 +448,7 @@ func (s *server) readHotspot() http.HandlerFunc {
 }
 
 type hotspotUpdateOptions struct {
+	Type     string	 `json:"type"`
 	Password *string `json:"password"`
 	Ssid     string  `json:"ssid"`
 }
